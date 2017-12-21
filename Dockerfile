@@ -1,4 +1,4 @@
-FROM fedora:latest as builder
+FROM fedora:26 as builder
 MAINTAINER Xueshan Feng <xueshan.feng@gmail.com>
 RUN echo "Installing socat...." && dnf install socat -y
 RUN libssl=$(ldd /usr/bin/socat | grep libssl.so | awk '{print $1}') && \
